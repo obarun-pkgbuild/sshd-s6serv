@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if ! [ -d /var/empty ]; then
+	mkdir -p -m0755 /var/empty
+fi
+. /etc/ssh/sshd_config
+
+exec 2>&1
+ssh-keygen -A
+exec /usr/bin/sshd -D $OPTS
+
