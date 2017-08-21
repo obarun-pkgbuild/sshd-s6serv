@@ -2,7 +2,7 @@
 
 pkgname=sshd-s6serv
 pkgver=0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="sshd service for s6"
 arch=(x86_64)
 license=('beerware')
@@ -24,7 +24,7 @@ package() {
 	
 	# log
 	install -Dm 0755 "$srcdir/sshd.log.run.s6" "$pkgdir/etc/s6-serv/available/classic/sshd/log/run"
-	install -Dm 0644 "$srcdir/sshd.logd" "$pkgdir/etc/s6-serv/log.d/serv/sshd"
+	install -Dm 0644 "$srcdir/sshd.logd" "$pkgdir/etc/s6-serv/log.d/sshd"
 	
 	install -Dm 0755 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/sshd-s6serv/LICENSE"
 }
